@@ -51,8 +51,9 @@ public class CommandeTest {
         //ProduitEnStock p1 = produitService.createProduit(new ProduitEnStock("Google Pixel 7", null, 2));
         Object res1 = produitEnStockRepository.findAll();//TODO rm
 
+        //créé un commande
         Commande c1 = commandeService.createCommande(new Commande(p1.getId(), 1l));
-        Assertions.assertEquals("created", c1.getStatus());
+        Assertions.assertEquals("created", c1.getStatus()); //Vérification
 
         commandeService.validateCommande(c1);
         Assertions.assertEquals("validated", c1.getStatus());
@@ -75,6 +76,19 @@ public class CommandeTest {
         } catch (StockInsuffisantCommandeException e) {
             Assertions.assertEquals(true, e.getMessage().contains("insuffisant"));
         }
+    }
+
+    /**
+     * TD 1 test unitaire
+     * */
+    @Test
+    public void testCreateCommande(){
+        // produit créé en init
+        ProduitEnStock p1 = produitService.getProduits().get(0);
+        Commande c1 = commandeService.createCommande(new Commande(p1.getId(), 1l));
+        Assertions.assertEquals("created", c1.getStatus()); //Vérification
+        Assertions.assertEquals(p1.getQuantiteDisponible(), c1.getQuantiteDisponibleStockConnu());
+
     }
 
 }

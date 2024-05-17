@@ -141,8 +141,9 @@ Voici l'organisation du code source de l'application :
 Forker ce repository Github dans votre propre compte Github. Après chaque question, vérifiez que les tests marchent toujours bien sûr ainsi que l'IHM, et committez et pushez vos changements.
 
 [TD] Exécutez les tests unitaires. D'après eux, quelle vous semble être la partie du code le plus important de l'application et que fait-il ?
+testStockSuffisant() est plus important car...
 
-[TD] Exécutez l'application. Allez sur l'IHM web et essayez de l'utiliser. Reproduisez les 2 cas trouvés dans le code des tests unitaires. Notez les fonctionnalités qui semblent incomplètes (I, V, E) ou manquer (S) et leurs potentielles difficultés (U).
+[TD] Exécutez l'application. Allez sur l'IHM web et essayez de l'utiliser. Reproduisez les 2 cas trouvés dans le code des tests unitaires. Notez les fonctionnalités qui semblent incomplètes (I, V, E) ou manquer (S) et leurs potentielles difficultés (U). U = undo S = supprimer
 
 ### Extraction du microservice "stock" - refactoring de l'appel en REST HAL
 
