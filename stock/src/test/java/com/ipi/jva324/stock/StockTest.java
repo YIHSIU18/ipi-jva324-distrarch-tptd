@@ -43,8 +43,9 @@ public class StockTest {
 
     @Test
     public void testGetProduits(){
-        // produit créé en init
+        // Récupère le premier produit de la liste des produits disponibles (produit créé en init)
         ProduitEnStock p1 = produitService.getProduits().get(0);
+        //Vérifie que le nom du premier produit est "iPhone 13 Pro"
         Assertions.assertEquals("iPhone 13 Pro", p1.getNom());
     }
 
